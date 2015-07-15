@@ -189,8 +189,10 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\FilesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ProgramsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -262,6 +264,16 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Programs\Create.cshtml" />
+    <Content Include="Views\Programs\Delete.cshtml" />
+    <Content Include="Views\Programs\Details.cshtml" />
+    <Content Include="Views\Programs\Edit.cshtml" />
+    <Content Include="Views\Programs\Index.cshtml" />
+    <Content Include="Views\Files\Create.cshtml" />
+    <Content Include="Views\Files\Delete.cshtml" />
+    <Content Include="Views\Files\Details.cshtml" />
+    <Content Include="Views\Files\Edit.cshtml" />
+    <Content Include="Views\Files\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

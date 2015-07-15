@@ -29,5 +29,9 @@ namespace programmingwebapp.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<programmingwebapp.Models.Program> Programs { get; set; }
+
+        public System.Data.Entity.DbSet<programmingwebapp.Models.File> Files { get; set; }
     }
 }

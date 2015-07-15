@@ -17,8 +17,7 @@ namespace programmingwebapp.Controllers
         // GET: Files
         public ActionResult Index()
         {
-            var files = db.Files.Include(f => f.Program);
-            return View(files.ToList());
+            return View(db.Files.ToList());
         }
 
         // GET: Files/Details/5
@@ -39,7 +38,7 @@ namespace programmingwebapp.Controllers
         // GET: Files/Create
         public ActionResult Create()
         {
-            ViewBag.ProgramId = new SelectList(db.Programs, "ProgramId", "ProgramName");
+            ViewBag.ProgramId = new SelectList(db.Programs, "ProgramId", "DisplayName");
             return View();
         }
 
@@ -58,7 +57,7 @@ namespace programmingwebapp.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.ProgramId = new SelectList(db.Programs, "ProgramId", "ProgramName", file.ProgramId);
+            ViewBag.ProgramId = new SelectList(db.Programs, "ProgramId", "DisplayName", file.ProgramId);
             return View(file);
         }
 
@@ -74,7 +73,7 @@ namespace programmingwebapp.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.ProgramId = new SelectList(db.Programs, "ProgramId", "ProgramName", file.ProgramId);
+            ViewBag.ProgramId = new SelectList(db.Programs, "ProgramId", "DisplayName", file.ProgramId);
             return View(file);
         }
 
@@ -91,7 +90,7 @@ namespace programmingwebapp.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.ProgramId = new SelectList(db.Programs, "ProgramId", "ProgramName", file.ProgramId);
+            ViewBag.ProgramId = new SelectList(db.Programs, "ProgramId", "DisplayName", file.ProgramId);
             return View(file);
         }
 

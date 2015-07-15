@@ -46,11 +46,14 @@ namespace programmingwebapp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ProgramId,Language,ProgramName,DisplayName")] Program program)
+        public ActionResult Create([Bind(Include = "ProgramId,Language,ProgramName")] Program program)
         {
             if (ModelState.IsValid)
             {
                 program.ProgramId = Guid.NewGuid();
+
+                program.DisplayName = program.ProgramName + ", " + program.Language;
+
                 db.Programs.Add(program);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -79,10 +82,12 @@ namespace programmingwebapp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ProgramId,Language,ProgramName,DisplayName")] Program program)
+        public ActionResult Edit([Bind(Include = "ProgramId,Language,ProgramName")] Program program)
         {
             if (ModelState.IsValid)
             {
+                program.DisplayName = program.ProgramName + ", " + program.Language;
+
                 db.Entry(program).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");

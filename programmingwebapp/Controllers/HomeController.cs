@@ -15,7 +15,7 @@ namespace programmingwebapp.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "Programming! - Get the Code";
 
             return View();
         }

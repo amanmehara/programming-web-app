@@ -19,7 +19,7 @@ namespace programmingwebapp.Controllers
         // GET: api/Data
         public IQueryable<Program> GetPrograms()
         {
-            return db.Programs;
+            return db.Programs.Include(p=>p.Files);
         }
 
         // GET: api/Data/5

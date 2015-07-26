@@ -32,7 +32,12 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.FileContent)
+            @*@Html.DisplayFor(model => model.FileContent)*@
+
+            @if (Model.FileContent != null)
+            {
+                @(new HtmlString("<pre class=\"line-numbers\"><code class=\"language-" + Model.Program.Language + "\">" + System.Security.SecurityElement.Escape(Model.FileContent) + "</code></pre>"))
+            }
         </dd>
 
     </dl>

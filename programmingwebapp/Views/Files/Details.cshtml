@@ -35,7 +35,7 @@
 
             @if (Model.FileContent != null)
             {
-                @(new HtmlString("<pre><code>" + System.Security.SecurityElement.Escape(Model.FileContent) + "</code></pre>"))
+                @(new HtmlString("<pre class=\"line-numbers\"><code class=\"language-" + Model.Program.Language + "\">" + System.Security.SecurityElement.Escape(Model.FileContent) + "</code></pre>"))
             }
         </dd>
 
